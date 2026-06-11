@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quentin Krieger — Portfolio 2026</title>
+<title>Quentin Krieger — Portfolio 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -303,6 +303,10 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .marquee-img{width:calc(33.33vw - 22px);height:260px;border-radius:20px;object-fit:cover;flex-shrink:0;display:block;pointer-events:none;}
 .marquee-section:hover .marquee-track{animation-play-state:paused;}
 
+/* ─── GALLERY SECTION LABEL ──────────────────────────────── */
+.gal-section{grid-column:1/-1;margin-top:10px;margin-bottom:2px;}
+.gal-section-label{font-family:var(--font-mono);font-size:.62rem;color:var(--orange);letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:10px;}
+.gal-section-label::after{content:'';flex:1;height:1px;background:rgba(255,92,31,.25);}
 /* ─── TOOLS GRID ─────────────────────────────────────────── */
 .tools-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
 .tool-badge{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border-light);border-radius:10px;padding:7px;position:relative;transition:transform .2s,box-shadow .2s;flex-shrink:0;}
@@ -379,7 +383,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
   <div class="hero-glow"></div>
   <div class="hero-grid">
     <div class="hero-content">
-      <div class="hero-label">Portfolio 2026 — BUT Techniques de Commercialisation</div>
+      <div class="hero-label">Portfolio 2025 — BUT Techniques de Commercialisation</div>
       <h1 class="hero-name">
         <span class="line">Quentin</span>
         <span class="line">Krieger</span>
@@ -491,19 +495,22 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
         <div class="tools-grid">
           <div class="tool-badge" data-tip="WordPress"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress"></div>
           <div class="tool-badge" data-tip="Elementor"><img src="https://cdn.simpleicons.org/elementor/92003B" alt="Elementor"></div>
-          <div class="tool-badge" data-tip="Shopify"><img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify"></div>
-          <div class="tool-badge" data-tip="Canva"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva"></div>
+          <div class="tool-badge" data-tip="Shopify"><img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify"></div>
+          <div class="tool-badge" data-tip="Canva" style="background:#7D2AE8;"><img src="https://cdn.simpleicons.org/canva/ffffff" alt="Canva"></div>
           <div class="tool-badge" data-tip="CapCut" style="background:#000;"><img src="https://cdn.simpleicons.org/capcut/ffffff" alt="CapCut"></div>
           <div class="tool-badge" data-tip="Google Ads"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="Google Ads"></div>
           <div class="tool-badge" data-tip="Google Analytics"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics"></div>
-          <div class="tool-badge" data-tip="Search Console"><img src="https://cdn.simpleicons.org/googlesearchconsole/458CF5" alt="Search Console"></div>
+          <div class="tool-badge" data-tip="Search Console" style="background:#fff;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22"><circle cx="11" cy="11" r="7" fill="none" stroke="#4285F4" stroke-width="2.2"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="#34A853" stroke-width="2.5" stroke-linecap="round"/><circle cx="9" cy="9.5" r="1.8" fill="#EA4335"/><rect x="9.5" y="10.5" width="4" height="1.4" rx=".7" fill="#FBBC05"/></svg>
+          </div>
           <div class="tool-badge" data-tip="Notion" style="background:#000;"><img src="https://cdn.simpleicons.org/notion/ffffff" alt="Notion"></div>
           <div class="tool-badge" data-tip="TikTok" style="background:#000;"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok"></div>
           <div class="tool-badge" data-tip="Instagram"><img src="https://cdn.simpleicons.org/instagram/E1306C" alt="Instagram"></div>
-          <div class="tool-badge" data-tip="LinkedIn"><img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn"></div>
-          <div class="tool-badge" data-tip="ChatGPT" style="background:#000;"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT"></div>
-          <div class="tool-badge" data-tip="Midjourney" style="background:#000;"><img src="https://cdn.simpleicons.org/midjourney/ffffff" alt="Midjourney"></div>
-          <div class="tool-badge" data-tip="NanoBanana" style="background:#FFE500;" class="tool-badge-custom"><span style="font-family:var(--font-display);font-weight:800;font-size:.62rem;color:#000;letter-spacing:-.02em;">NB</span></div>
+          <div class="tool-badge" data-tip="LinkedIn" style="background:#0A66C2;"><img src="https://cdn.simpleicons.org/linkedin/ffffff" alt="LinkedIn"></div>
+          <div class="tool-badge" data-tip="ChatGPT" style="background:#74AA9C;"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT"></div>
+          <div class="tool-badge" data-tip="Claude" style="background:#D97757;"><img src="https://cdn.simpleicons.org/claude/ffffff" alt="Claude"></div>
+          <div class="tool-badge" data-tip="Gemini" style="background:#fff;"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Gemini"></div>
+          <div class="tool-badge" data-tip="NanoBanana" style="background:#FFE500;"><span style="font-family:var(--font-display);font-weight:800;font-size:.58rem;color:#1a1a1a;letter-spacing:-.02em;line-height:1;">nano<br>banana</span></div>
         </div>
       </div>
     </div>
@@ -677,7 +684,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div>
     <div class="gallery" id="gal-swell">
-      <div class="gal-item wide" onclick="openLB('swell',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Compte%20swell%20surfers.png" alt="Compte Swell Surfers" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('swell',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Compte%20swell%20surfers.png" alt="Compte Swell Surfers" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('swell',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Chiffre%20compte%20swell%20surfers.png" alt="Chiffres Swell Surfers" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('swell',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Swell%20surfers%20chiffres.png" alt="Stats Swell Surfers" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('swell',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%201.jpg" alt="Publication 1" loading="lazy"></div>
@@ -685,8 +692,8 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       <div class="gal-item" onclick="openLB('swell',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%203.jpg" alt="Publication 3" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('swell',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%204.jpg" alt="Publication 4" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('swell',7)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Swell%20surfers%20post.png" alt="Post Swell Surfers" loading="lazy"></div>
-      <div class="gal-item wide" onclick="openLB('swell',8)" style="aspect-ratio:16/9;background:#000;">
-        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/PRESENTATION%20SWELL%20SURFERS%20(6).mp4" muted loop autoplay playsinline></video>
+      <div class="gal-item" onclick="openLB('swell',8)" style="aspect-ratio:16/9;background:#000;">
+        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/PRESENTATION%20SWELL%20SURFERS%20(6).mp4" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
     </div>
   </div>
@@ -704,10 +711,11 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div>
     <div class="gallery" id="gal-oceneo">
-      <div class="gal-item wide" onclick="openLB('oceneo',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/compteoceneo.jpg" alt="Compte Oceneo" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('oceneo',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/compteoceneo.jpg" alt="Compte Oceneo" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('oceneo',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datainsta.jpg" alt="Data Instagram Oceneo" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('oceneo',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datatiktok.jpg" alt="Data TikTok Oceneo" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('oceneo',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/image%20(3).png" alt="Oceneo visuel" loading="lazy"></div>
+      <!-- Vidéos côte à côte -->
       <div class="gal-item" onclick="openLB('oceneo',4)" style="aspect-ratio:9/16;background:#000;">
         <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/ASMR.mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
@@ -730,16 +738,23 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div>
     <div class="gallery" id="gal-cyclezen">
-      <div class="gal-item wide" onclick="openLB('cyclezen',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Cyclezen%20shooting.png" alt="Cyclezen shooting" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="Cyclezen produit" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0804.jpeg" alt="Cyclezen produit 2" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20protections%20p%C3%A9riodiques.png" alt="Protections périodiques" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20shooting%20packaging%20protections%20p%C3%A9riodiques%20cyclezen.png" alt="Shooting packaging" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_xa8kg9xa8kg9xa8k-Photoroom.png" alt="Visuel IA 1" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_g8wdtpg8wdtpg8wd.png" alt="Visuel IA 2" loading="lazy"></div>
-      <div class="gal-item wide" onclick="openLB('cyclezen',7)" style="aspect-ratio:16/9;background:#000;">
-        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/0424(1)%20(1).mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+      <!-- Infos du compte -->
+      <div class="gal-section"><div class="gal-section-label">Infos du compte</div></div>
+      <div class="gal-item" onclick="openLB('cyclezen',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="Compte Cyclezen" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0804.jpeg" alt="Compte Cyclezen 2" loading="lazy"></div>
+      <!-- Montage vidéo -->
+      <div class="gal-section"><div class="gal-section-label">Montage vidéo</div></div>
+      <div class="gal-item wide" onclick="openLB('cyclezen',2)" style="aspect-ratio:16/9;background:#000;position:relative;">
+        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/0424(1)%20(1).mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></video>
+        <div style="position:absolute;bottom:14px;left:18px;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);border-radius:8px;padding:6px 14px;font-family:var(--font-mono);font-size:.62rem;color:var(--cream);letter-spacing:.06em;">+ Nombreux autres montages réalisés</div>
       </div>
+      <!-- Création de contenu visuel avec l'IA -->
+      <div class="gal-section"><div class="gal-section-label">Création de contenu visuel avec l'IA</div></div>
+      <div class="gal-item" onclick="openLB('cyclezen',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Cyclezen%20shooting.png" alt="Cyclezen shooting" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20protections%20p%C3%A9riodiques.png" alt="Protections périodiques" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20shooting%20packaging%20protections%20p%C3%A9riodiques%20cyclezen.png" alt="Shooting packaging" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_xa8kg9xa8kg9xa8k-Photoroom.png" alt="Visuel IA 1" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',7)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_g8wdtpg8wdtpg8wd.png" alt="Visuel IA 2" loading="lazy"></div>
     </div>
   </div>
 
@@ -784,12 +799,12 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div>
     <div class="gallery" id="gal-tds">
-      <div class="gal-item wide" onclick="openLB('tds',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="Temple du Sport" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('tds',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20compte.png" alt="Compte Temple du Sport" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('tds',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20feed.png" alt="Feed Temple du Sport" loading="lazy"></div>
-      <div class="gal-item portrait" onclick="openLB('tds',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20story.png" alt="Story Temple du Sport" loading="lazy"></div>
-      <div class="gal-item portrait" onclick="openLB('tds',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20story%202.png" alt="Story 2 Temple du Sport" loading="lazy"></div>
-      <div class="gal-item portrait" onclick="openLB('tds',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Story%20%C3%A0%20la%20une%20pr%C3%A9sentant%20offre.jpg" alt="Story à la une" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20compte.png" alt="Compte Temple du Sport" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20feed.png" alt="Feed Temple du Sport" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20story.png" alt="Story Temple du Sport" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20story%202.png" alt="Story 2 Temple du Sport" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Story%20%C3%A0%20la%20une%20pr%C3%A9sentant%20offre.jpg" alt="Story à la une" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="Temple du Sport" loading="lazy"></div>
     </div>
   </div>
 
@@ -889,7 +904,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 
 <!-- ─── FOOTER ─────────────────────────────────── -->
 <footer>
-  <div class="foot-left"><strong>Quentin Krieger</strong> — Portfolio 2026 · BUT TC · IUT de Bordeaux</div>
+  <div class="foot-left"><strong>Quentin Krieger</strong> — Portfolio 2025 · BUT TC · IUT de Bordeaux</div>
   <div class="foot-right">
     <a href="https://www.instagram.com/swell_surfers" target="_blank">@swell_surfers</a> ·
     <a href="https://www.instagram.com/atelier_krieger_architecte" target="_blank">@atelier_krieger_architecte</a>
@@ -928,14 +943,14 @@ const galleries = {
     {type:'img',src:GITHUB+'5.png'},
   ],
   cyclezen: [
-    {type:'img',src:GITHUB+'Cyclezen%20shooting.png'},
     {type:'img',src:GITHUB+'IMG_0803.jpeg'},
     {type:'img',src:GITHUB+'IMG_0804.jpeg'},
+    {type:'video',src:GITHUB+'0424(1)%20(1).mov'},
+    {type:'img',src:GITHUB+'Cyclezen%20shooting.png'},
     {type:'img',src:GITHUB+'Photo%20protections%20p%C3%A9riodiques.png'},
     {type:'img',src:GITHUB+'Photo%20shooting%20packaging%20protections%20p%C3%A9riodiques%20cyclezen.png'},
     {type:'img',src:GITHUB+'Gemini_Generated_Image_xa8kg9xa8kg9xa8k-Photoroom.png'},
     {type:'img',src:GITHUB+'Gemini_Generated_Image_g8wdtpg8wdtpg8wd.png'},
-    {type:'video',src:GITHUB+'0424(1)%20(1).mov'},
   ],
   oceneo: [
     {type:'img',src:GITHUB+'compteoceneo.jpg'},
@@ -946,12 +961,12 @@ const galleries = {
     {type:'video',src:GITHUB+'0213.mov'},
   ],
   tds: [
-    {type:'img',src:GITHUB+'Le%20temple%20du%20sport.png'},
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport%20compte.png'},
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport%20feed.png'},
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport%20story.png'},
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport%20story%202.png'},
     {type:'img',src:GITHUB+'Story%20%C3%A0%20la%20une%20pr%C3%A9sentant%20offre.jpg'},
+    {type:'img',src:GITHUB+'Le%20temple%20du%20sport.png'},
   ],
 };
 let currentGallery = null, currentIndex = 0;
