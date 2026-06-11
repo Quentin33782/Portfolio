@@ -216,7 +216,7 @@ nav.scrolled{padding:14px 60px;}
 .proj-stat-label{font-family:var(--font-mono);font-size:.55rem;color:var(--mid);text-transform:uppercase;letter-spacing:.1em;margin-top:2px;}
 
 /* Gallery grid */
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .gal-item{border-radius:10px;overflow:hidden;aspect-ratio:4/3;cursor:none;position:relative;background:var(--bg3);}
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease);}
 .gal-item:hover img{transform:scale(1.06);}
@@ -294,14 +294,23 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .reveal-d3{transition-delay:.3s;}
 
 /* ─── MARQUEE ────────────────────────────────────────────── */
-.marquee-section{padding:28px 0;overflow:hidden;display:flex;flex-direction:column;gap:10px;background:var(--bg);}
-.marquee-track{display:flex;gap:10px;width:max-content;will-change:transform;}
-.marquee-track.ltr{animation:mLTR 40s linear infinite;}
-.marquee-track.rtl{animation:mRTL 36s linear infinite;}
+.marquee-section{padding:20px 0;overflow:hidden;display:flex;flex-direction:column;gap:14px;background:var(--bg);}
+.marquee-track{display:flex;gap:16px;width:max-content;will-change:transform;}
+.marquee-track.ltr{animation:mLTR 14s linear infinite;}
+.marquee-track.rtl{animation:mRTL 16s linear infinite;}
 @keyframes mLTR{from{transform:translateX(-50%);}to{transform:translateX(0);}}
 @keyframes mRTL{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.marquee-img{height:100px;width:auto;border-radius:20px;object-fit:cover;flex-shrink:0;display:block;pointer-events:none;}
+.marquee-img{width:calc(33.33vw - 22px);height:260px;border-radius:20px;object-fit:cover;flex-shrink:0;display:block;pointer-events:none;}
 .marquee-section:hover .marquee-track{animation-play-state:paused;}
+
+/* ─── TOOLS GRID ─────────────────────────────────────────── */
+.tools-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.tool-badge{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border-light);border-radius:10px;padding:7px;position:relative;transition:transform .2s,box-shadow .2s;flex-shrink:0;}
+.tool-badge:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12);}
+.tool-badge img{width:24px;height:24px;object-fit:contain;display:block;}
+.tool-badge::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;font-family:var(--font-mono);font-size:.55rem;padding:3px 8px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:10;}
+.tool-badge:hover::after{opacity:1;}
+.tool-badge-custom{font-family:var(--font-display);font-weight:800;font-size:.6rem;color:#fff;padding:0;letter-spacing:-.01em;}
 
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media(max-width:900px){
@@ -356,7 +365,6 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
   <a href="#hero" class="nav-logo">QK<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">Profil</a></li>
-    <li><a href="#ppp">Vision</a></li>
     <li><a href="#experiences">Expériences</a></li>
     <li><a href="#competences">Compétences</a></li>
     <li><a href="#preuves">Portfolio</a></li>
@@ -424,51 +432,23 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 <div class="marquee-section">
   <!-- Row 1 : gauche → droite -->
   <div class="marquee-track ltr">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%201.jpg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%201.png" alt="">
     <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Cyclezen%20shooting.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%202.jpg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%203.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%203.jpg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%205.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/compteoceneo.jpg" alt="">
-    <!-- duplicate pour boucle -->
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%201.jpg" alt="">
     <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%201.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%201.jpg" alt="">
+    <!-- duplicate pour boucle seamless -->
     <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Cyclezen%20shooting.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%202.jpg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%203.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%203.jpg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%205.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/compteoceneo.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%201.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%201.jpg" alt="">
   </div>
   <!-- Row 2 : droite → gauche -->
   <div class="marquee-track rtl">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%202.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%204.jpg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour%20(1).png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%206.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="">
     <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20feed.png" alt="">
     <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%207.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Swell%20surfers%20post.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%208.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datainsta.jpg" alt="">
-    <!-- duplicate pour boucle -->
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%202.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%204.jpg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour%20(1).png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%206.png" alt="">
+    <!-- duplicate pour boucle seamless -->
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="">
     <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20feed.png" alt="">
     <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%207.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Swell%20surfers%20post.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%208.png" alt="">
-    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datainsta.jpg" alt="">
   </div>
 </div>
 
@@ -479,9 +459,9 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
   <h2 class="section-title">Qui suis-je <em>?</em></h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>22 ans, étudiant en <strong>BUT Techniques de Commercialisation</strong> à l'IUT de Bordeaux, spécialisation marketing digital et entrepreneuriat. Passionné par l'intersection entre la stratégie, la créativité et la data.</p>
-      <p>J'ai eu la chance de travailler sur des projets concrets et variés : gestion de comptes Instagram à grande échelle, SEO/SEA, webmastering, e-commerce, social media B2B & B2C. Chaque expérience m'a appris quelque chose de tangible.</p>
-      <p>Je gère également des comptes Instagram en parallèle de mes études, dont <strong>@swell_surfers</strong> — un projet entrepreneurial qui cumule 43 000 abonnés et des millions de vues sur Reels.</p>
+      <p>22 ans, étudiant en <strong>BUT Techniques de Commercialisation</strong> à l'IUT de Bordeaux, spécialisation marketing digital et entrepreneuriat.</p>
+      <p>J'ai eu la chance de travailler sur des projets concrets et variés : SEO/SEA, webmastering, e-commerce, social media B2B & B2C. Chaque expérience m'a appris quelque chose de tangible.</p>
+      <p>Actuellement en alternance chez <strong>Cyclezen</strong>, je pilote en autonomie toute la stratégie d'acquisition digitale de l'entreprise — du SEO/SEA à la création de contenu, en passant par la gestion du site, des réseaux sociaux et des campagnes publicitaires.</p>
       <div class="tags">
         <span class="tag active">Entrepreneuriat</span>
         <span class="tag active">Growth Marketing</span>
@@ -508,51 +488,28 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       </div>
       <div class="info-card">
         <div class="info-label">Outils maîtrisés</div>
-        <div class="tags" style="margin-top:0">
-          <span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag">Meta Ads</span>
-          <span class="tag">Google Ads</span><span class="tag">Notion</span><span class="tag">WordPress</span>
-          <span class="tag">ChatGPT / IA</span><span class="tag">LinkedIn</span>
+        <div class="tools-grid">
+          <div class="tool-badge" data-tip="WordPress"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress"></div>
+          <div class="tool-badge" data-tip="Elementor"><img src="https://cdn.simpleicons.org/elementor/92003B" alt="Elementor"></div>
+          <div class="tool-badge" data-tip="Shopify"><img src="https://cdn.simpleicons.org/shopify/7AB55C" alt="Shopify"></div>
+          <div class="tool-badge" data-tip="Canva"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva"></div>
+          <div class="tool-badge" data-tip="CapCut" style="background:#000;"><img src="https://cdn.simpleicons.org/capcut/ffffff" alt="CapCut"></div>
+          <div class="tool-badge" data-tip="Google Ads"><img src="https://cdn.simpleicons.org/googleads/4285F4" alt="Google Ads"></div>
+          <div class="tool-badge" data-tip="Google Analytics"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics"></div>
+          <div class="tool-badge" data-tip="Search Console"><img src="https://cdn.simpleicons.org/googlesearchconsole/458CF5" alt="Search Console"></div>
+          <div class="tool-badge" data-tip="Notion" style="background:#000;"><img src="https://cdn.simpleicons.org/notion/ffffff" alt="Notion"></div>
+          <div class="tool-badge" data-tip="TikTok" style="background:#000;"><img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="TikTok"></div>
+          <div class="tool-badge" data-tip="Instagram"><img src="https://cdn.simpleicons.org/instagram/E1306C" alt="Instagram"></div>
+          <div class="tool-badge" data-tip="LinkedIn"><img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn"></div>
+          <div class="tool-badge" data-tip="ChatGPT" style="background:#000;"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT"></div>
+          <div class="tool-badge" data-tip="Midjourney" style="background:#000;"><img src="https://cdn.simpleicons.org/midjourney/ffffff" alt="Midjourney"></div>
+          <div class="tool-badge" data-tip="NanoBanana" style="background:#FFE500;" class="tool-badge-custom"><span style="font-family:var(--font-display);font-weight:800;font-size:.62rem;color:#000;letter-spacing:-.02em;">NB</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 </div>
-
-<div class="divider"></div>
-
-<!-- ─── PPP VISION ──────────────────────────────── -->
-<section id="ppp" class="section">
-  <div class="eyebrow">Projet Professionnel</div>
-  <h2 class="section-title">Ma vision <em>long terme</em></h2>
-  <div class="ppp-cards">
-    <div class="ppp-card reveal">
-      <div class="ppp-top-bar"></div>
-      <div class="ppp-horizon"><div class="pulse"></div>Court terme</div>
-      <div class="ppp-card-title">Monter en compétences</div>
-      <div class="ppp-card-text">Intégrer le Master Entrepreneuriat & Management de Projet à l'IAE de Bordeaux. Approfondir mes connaissances en gestion de projet, finance, stratégie et marketing avancé.</div>
-    </div>
-    <div class="ppp-card reveal reveal-d1">
-      <div class="ppp-top-bar"></div>
-      <div class="ppp-horizon"><div class="pulse"></div>Moyen terme</div>
-      <div class="ppp-card-title">Lancer un business</div>
-      <div class="ppp-card-text">Transformer mes projets entrepreneuriaux en structures rentables. Capitaliser sur mon expérience en content creation, acquisition et e-commerce pour lancer une activité à forte valeur ajoutée.</div>
-    </div>
-    <div class="ppp-card reveal reveal-d2">
-      <div class="ppp-top-bar"></div>
-      <div class="ppp-horizon"><div class="pulse"></div>Long terme</div>
-      <div class="ppp-card-title">Être entrepreneur</div>
-      <div class="ppp-card-text">Devenir entrepreneur à plein temps. Créer, développer et scaler des projets dans les domaines qui me passionnent : sport, digital, e-commerce ou conseil en marketing.</div>
-    </div>
-  </div>
-  <div class="ppp-next reveal">
-    <div>
-      <div class="ppp-school">IAE de Bordeaux</div>
-      <div class="ppp-school-sub">Master Entrepreneuriat & Management de Projet — Rentrée 2026</div>
-    </div>
-    <div class="ppp-badge">Prochaine étape →</div>
-  </div>
-</section>
 
 <div class="divider"></div>
 
@@ -699,15 +656,15 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
   <h2 class="section-title">Les <em>preuves</em></h2>
 
   <div class="proof-tabs">
-    <button class="ptab active" onclick="showProof('swell',this)">Swell Surfers</button>
+    <button class="ptab active" onclick="showProof('cyclezen',this)">Cyclezen</button>
     <button class="ptab" onclick="showProof('oceneo',this)">Oceneo</button>
-    <button class="ptab" onclick="showProof('cyclezen',this)">Cyclezen</button>
     <button class="ptab" onclick="showProof('krieger',this)">Atelier Krieger</button>
     <button class="ptab" onclick="showProof('tds',this)">Temple du Sport</button>
+    <button class="ptab" onclick="showProof('swell',this)">Swell Surfers</button>
   </div>
 
   <!-- SWELL SURFERS -->
-  <div class="proof-pane active" id="pane-swell">
+  <div class="proof-pane" id="pane-swell">
     <div class="proj-header reveal">
       <div>
         <div class="proj-title">@swell_surfers</div>
@@ -751,17 +708,17 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       <div class="gal-item" onclick="openLB('oceneo',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datainsta.jpg" alt="Data Instagram Oceneo" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('oceneo',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datatiktok.jpg" alt="Data TikTok Oceneo" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('oceneo',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/image%20(3).png" alt="Oceneo visuel" loading="lazy"></div>
-      <div class="gal-item wide" onclick="openLB('oceneo',4)" style="aspect-ratio:9/16;max-width:300px;background:#000;">
+      <div class="gal-item" onclick="openLB('oceneo',4)" style="aspect-ratio:9/16;background:#000;">
         <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/ASMR.mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
-      <div class="gal-item wide" onclick="openLB('oceneo',5)" style="aspect-ratio:9/16;max-width:300px;background:#000;">
+      <div class="gal-item" onclick="openLB('oceneo',5)" style="aspect-ratio:9/16;background:#000;">
         <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/0213.mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
     </div>
   </div>
 
   <!-- CYCLEZEN -->
-  <div class="proof-pane" id="pane-cyclezen">
+  <div class="proof-pane active" id="pane-cyclezen">
     <div class="proj-header reveal">
       <div>
         <div class="proj-title">Cyclezen — Growth Marketing Alternance</div>
@@ -774,15 +731,13 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
     </div>
     <div class="gallery" id="gal-cyclezen">
       <div class="gal-item wide" onclick="openLB('cyclezen',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Cyclezen%20shooting.png" alt="Cyclezen shooting" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0802.jpeg" alt="Cyclezen produit" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="Cyclezen produit 2" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0804.jpeg" alt="Cyclezen produit 3" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20protections%20p%C3%A9riodiques.png" alt="Protections périodiques" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20shooting%20packaging%20protections%20p%C3%A9riodiques%20cyclezen.png" alt="Shooting packaging" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/5.png" alt="Cyclezen visuel 5" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',7)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_xa8kg9xa8kg9xa8k-Photoroom.png" alt="Visuel IA Cyclezen 1" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('cyclezen',8)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_g8wdtpg8wdtpg8wd.png" alt="Visuel IA Cyclezen 2" loading="lazy"></div>
-      <div class="gal-item wide" onclick="openLB('cyclezen',9)" style="aspect-ratio:16/9;background:#000;">
+      <div class="gal-item" onclick="openLB('cyclezen',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="Cyclezen produit" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0804.jpeg" alt="Cyclezen produit 2" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20protections%20p%C3%A9riodiques.png" alt="Protections périodiques" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Photo%20shooting%20packaging%20protections%20p%C3%A9riodiques%20cyclezen.png" alt="Shooting packaging" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_xa8kg9xa8kg9xa8k-Photoroom.png" alt="Visuel IA 1" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('cyclezen',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gemini_Generated_Image_g8wdtpg8wdtpg8wd.png" alt="Visuel IA 2" loading="lazy"></div>
+      <div class="gal-item wide" onclick="openLB('cyclezen',7)" style="aspect-ratio:16/9;background:#000;">
         <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/0424(1)%20(1).mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
     </div>
@@ -897,7 +852,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
           <div><span class="clink-label">Téléphone</span><span class="clink-val">06 49 18 09 62</span></div>
           <span style="color:var(--mid-light);margin-left:auto;">→</span>
         </a>
-        <a href="https://www.linkedin.com/in/quentin-krieger" target="_blank" class="clink">
+        <a href="https://www.linkedin.com/in/quentin-krieger-084a97253/" target="_blank" class="clink">
           <div class="clink-icon" style="font-family:var(--font-display);font-weight:800;font-size:.75rem;">in</div>
           <div><span class="clink-label">LinkedIn</span><span class="clink-val">Quentin Krieger</span></div>
           <span style="color:var(--mid-light);margin-left:auto;">→</span>
@@ -974,12 +929,10 @@ const galleries = {
   ],
   cyclezen: [
     {type:'img',src:GITHUB+'Cyclezen%20shooting.png'},
-    {type:'img',src:GITHUB+'IMG_0802.jpeg'},
     {type:'img',src:GITHUB+'IMG_0803.jpeg'},
     {type:'img',src:GITHUB+'IMG_0804.jpeg'},
     {type:'img',src:GITHUB+'Photo%20protections%20p%C3%A9riodiques.png'},
     {type:'img',src:GITHUB+'Photo%20shooting%20packaging%20protections%20p%C3%A9riodiques%20cyclezen.png'},
-    {type:'img',src:GITHUB+'5.png'},
     {type:'img',src:GITHUB+'Gemini_Generated_Image_xa8kg9xa8kg9xa8k-Photoroom.png'},
     {type:'img',src:GITHUB+'Gemini_Generated_Image_g8wdtpg8wdtpg8wd.png'},
     {type:'video',src:GITHUB+'0424(1)%20(1).mov'},
@@ -1090,7 +1043,7 @@ window.addEventListener('scroll',()=>{
   // Nav shrink
   document.getElementById('navbar').classList.toggle('scrolled', st>60);
   // Active nav link
-  const sections = ['hero','about','ppp','experiences','competences','preuves','formation','contact'];
+  const sections = ['hero','about','experiences','competences','preuves','formation','contact'];
   sections.forEach(id=>{
     const el = document.getElementById(id);
     if(!el) return;
