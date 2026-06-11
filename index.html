@@ -332,6 +332,9 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .tool-badge:hover::after{opacity:1;}
 .tool-badge-custom{font-family:var(--font-display);font-weight:800;font-size:.6rem;color:#fff;padding:0;letter-spacing:-.01em;}
 
+/* ─── TOAST ──────────────────────────────────────────────── */
+#toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--dark-text);color:var(--bg);font-family:var(--font-mono);font-size:.72rem;padding:10px 20px;border-radius:40px;letter-spacing:.06em;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:500;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 /* ─── FOCUS RINGS (accessibilité clavier) ────────────────── */
 :focus-visible{outline:2px solid var(--orange-text);outline-offset:3px;border-radius:4px;}
 button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outline-offset:4px;}
@@ -491,6 +494,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
 
 <!-- Progress -->
 <div id="prog"></div>
+<!-- Toast -->
+<div id="toast">✓ Email copié !</div>
 
 <!-- Cursor -->
 <div id="cur"><div id="cur-dot"></div></div>
@@ -515,7 +520,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
     <li><a href="#formation">Formation</a></li>
     <li><a href="#cv">CV</a></li>
   </ul>
-  <a href="mailto:krieger.quentin33@orange.fr" class="nav-cta">Me contacter</a>
+  <a href="#contact" class="nav-cta">Me contacter</a>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -529,7 +534,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
   <a href="#preuves" onclick="closeMobileMenu()">Portfolio</a>
   <a href="#formation" onclick="closeMobileMenu()">Formation</a>
   <a href="#cv" onclick="closeMobileMenu()">CV</a>
-  <a href="mailto:krieger.quentin33@orange.fr" class="nav-mobile-cta" onclick="setTimeout(closeMobileMenu,200)">Me contacter</a>
+  <a href="#contact" class="nav-mobile-cta" onclick="closeMobileMenu()">Me contacter</a>
 </div>
 
 <!-- ─── HERO ───────────────────────────────────── -->
@@ -1097,10 +1102,10 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
       <h2 class="contact-title">Travaillons<br><em>ensemble.</em></h2>
       <p class="contact-sub">Ouvert aux opportunités de stage, alternance, collaboration ou simplement pour échanger sur un projet. N'hésitez pas à me contacter.</p>
       <div class="clinks">
-        <a href="mailto:krieger.quentin33@orange.fr" class="clink">
+        <a href="mailto:krieger.quentin33@orange.fr" class="clink" id="email-clink" onclick="copyEmail(event)">
           <div class="clink-icon">✉</div>
           <div><span class="clink-label">Email</span><span class="clink-val">krieger.quentin33@orange.fr</span></div>
-          <span style="color:var(--mid-light);margin-left:auto;">→</span>
+          <span id="email-arrow" style="color:var(--mid-light);margin-left:auto;font-family:var(--font-mono);font-size:.72rem;transition:all .2s;">→</span>
         </a>
         <a href="tel:0649180962" class="clink">
           <div class="clink-icon">📱</div>
@@ -1420,6 +1425,25 @@ document.addEventListener('keydown', e => {
   if(e.key==='Escape' && navMobile.classList.contains('open')) closeMobileMenu();
 });
 
+// COPY EMAIL
+function copyEmail(e) {
+  e.preventDefault();
+  navigator.clipboard.writeText('krieger.quentin33@orange.fr').then(() => {
+    const arrow = document.getElementById('email-arrow');
+    const toast = document.getElementById('toast');
+    arrow.textContent = '✓ Copié';
+    arrow.style.color = 'var(--orange)';
+    toast.classList.add('show');
+    setTimeout(() => {
+      arrow.textContent = '→';
+      arrow.style.color = '';
+      toast.classList.remove('show');
+    }, 2200);
+  }).catch(() => {
+    // fallback : ouvrir mailto si clipboard échoue
+    window.location.href = 'mailto:krieger.quentin33@orange.fr';
+  });
+}
 // BACK TO TOP
 const btt = document.getElementById('btt');
 window.addEventListener('scroll', () => {
