@@ -303,6 +303,17 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .marquee-img{width:calc(33.33vw - 22px);height:260px;border-radius:20px;object-fit:cover;flex-shrink:0;display:block;pointer-events:none;}
 .marquee-section:hover .marquee-track{animation-play-state:paused;}
 
+/* ─── CV SECTION ─────────────────────────────────────────── */
+#cv{background:var(--bg2);}
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;}
+.cv-img-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);border:1px solid var(--border);}
+.cv-img-wrap img{width:100%;display:block;}
+.cv-text{display:flex;flex-direction:column;gap:24px;}
+.cv-text h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;}
+.cv-text h2 em{color:var(--orange);font-style:normal;}
+.cv-text p{color:var(--mid-light);font-size:.95rem;line-height:1.8;}
+.cv-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;background:var(--orange);color:#fff;font-family:var(--font-display);font-weight:700;font-size:.85rem;letter-spacing:.04em;border-radius:50px;transition:transform .2s,box-shadow .2s;width:fit-content;}
+.cv-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,92,31,.3);}
 /* ─── GALLERY SECTION LABEL ──────────────────────────────── */
 .gal-section{grid-column:1/-1;margin-top:10px;margin-bottom:2px;}
 .gal-section-label{font-family:var(--font-mono);font-size:.62rem;color:var(--orange);letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;gap:10px;}
@@ -373,6 +384,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
     <li><a href="#competences">Compétences</a></li>
     <li><a href="#preuves">Portfolio</a></li>
     <li><a href="#formation">Formation</a></li>
+    <li><a href="#cv">CV</a></li>
   </ul>
   <a href="mailto:krieger.quentin33@orange.fr" class="nav-cta">Me contacter</a>
 </nav>
@@ -591,7 +603,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       </div>
       <div class="tl-missions">
         <div class="mission"><span class="mission-arrow">→</span>Réalisation et montage de vidéos promotionnelles pour les réseaux sociaux.</div>
-        <div class="mission"><span class="mission-arrow">→</span>Conception de contenus pour les réseaux sociaux (stories, carrousels, reels).</div>
+        <div class="mission"><span class="mission-arrow">→</span>Conception de contenus pour les réseaux sociaux (stories, carrousels, Reels).</div>
         <div class="mission"><span class="mission-arrow">→</span>Gestion et animation de la communication sur Instagram. <span class="chip" style="background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.25);color:#06B6D4;">@agora_tech</span></div>
       </div>
     </div>
@@ -664,7 +676,29 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
     <button class="ptab" onclick="showProof('oceneo',this)">Oceneo</button>
     <button class="ptab" onclick="showProof('krieger',this)">Atelier Krieger</button>
     <button class="ptab" onclick="showProof('tds',this)">Temple du Sport</button>
+    <button class="ptab" onclick="showProof('kresala',this)">Kresala Surf Eskola</button>
     <button class="ptab" onclick="showProof('swell',this)">Swell Surfers</button>
+  </div>
+
+  <!-- KRESALA SURF ESKOLA -->
+  <div class="proof-pane" id="pane-kresala">
+    <div class="proj-header reveal">
+      <div>
+        <div class="proj-title">Kresala Surf Eskola — Saint-Sébastien</div>
+        <div class="proj-desc">Stage développement digital : conception du site web sur Canva, rédaction d'articles SEO (+ 30 articles), gestion des stocks et recherche de partenariats hôteliers.</div>
+      </div>
+      <div class="proj-stats">
+        <div class="proj-stat"><div class="proj-stat-num">+30</div><div class="proj-stat-label">Articles SEO</div></div>
+        <div class="proj-stat"><div class="proj-stat-num">Juin 2024</div><div class="proj-stat-label">Stage</div></div>
+      </div>
+    </div>
+    <div class="gallery" id="gal-kresala">
+      <div class="gal-section"><div class="gal-section-label">Shooting sur place</div></div>
+      <div class="gal-item" onclick="openLB('kresala',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/WhatsApp%20Image%202024-11-19%20at%2021.46.04.jpeg" alt="Kresala 1" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('kresala',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/WhatsApp%20Image%202024-11-19%20at%2021.46.03.jpeg" alt="Kresala 2" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('kresala',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/WhatsApp%20Image%202024-11-19%20at%2021.46.13.jpeg" alt="Kresala 3" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('kresala',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/WhatsApp%20Image%202024-11-19%20at%2021.46.09.jpeg" alt="Kresala 4" loading="lazy"></div>
+    </div>
   </div>
 
   <!-- SWELL SURFERS -->
@@ -723,12 +757,20 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       <div class="gal-item" onclick="openLB('oceneo',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datainsta.jpg" alt="Data Instagram" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('oceneo',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datatiktok.jpg" alt="Data TikTok" loading="lazy"></div>
       <!-- Montages vidéos -->
-      <div class="gal-section"><div class="gal-section-label">Montages vidéos</div></div>
+      <div class="gal-section"><div class="gal-section-label">Montages vidéos <span style="font-size:.55rem;opacity:.6;text-transform:none;letter-spacing:0;">(parmi de nombreux autres)</span></div></div>
       <div class="gal-item" onclick="openLB('oceneo',3)" style="aspect-ratio:9/16;background:#000;">
         <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/ASMR.mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
       <div class="gal-item" onclick="openLB('oceneo',4)" style="aspect-ratio:9/16;background:#000;">
         <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/0213.mov" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+      </div>
+      <!-- Shooting vidéos -->
+      <div class="gal-section"><div class="gal-section-label">Shooting vidéos</div></div>
+      <div class="gal-item" onclick="openLB('oceneo',5)" style="aspect-ratio:16/9;background:#000;">
+        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/ID20250205160205%20(1).mp4" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+      </div>
+      <div class="gal-item" onclick="openLB('oceneo',6)" style="aspect-ratio:16/9;background:#000;">
+        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/VID20250205155942%20(1).mp4" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
       </div>
     </div>
   </div>
@@ -780,23 +822,24 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
     <div class="gallery" id="gal-krieger">
       <!-- Infos du compte -->
       <div class="gal-section"><div class="gal-section-label">Infos du compte</div></div>
-      <div class="gal-item" onclick="openLB('krieger',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0802.jpeg" alt="Compte Atelier Krieger" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',0)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0801.png" alt="Compte Atelier Krieger" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0802.jpeg" alt="Compte Atelier Krieger 2" loading="lazy"></div>
       <!-- Stories à la une -->
       <div class="gal-section"><div class="gal-section-label">Stories à la une</div></div>
-      <div class="gal-item" onclick="openLB('krieger',1)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%201.png" alt="Story 1" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%202.png" alt="Story 2" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%203.png" alt="Story 3" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%204.png" alt="Story 4" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%205.png" alt="Story 5" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%206.png" alt="Story 6" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',7)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%207.png" alt="Story 7" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',8)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%208.png" alt="Story 8" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%201.png" alt="Story 1" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%202.png" alt="Story 2" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%203.png" alt="Story 3" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%204.png" alt="Story 4" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%205.png" alt="Story 5" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',7)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%206.png" alt="Story 6" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',8)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%207.png" alt="Story 7" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',9)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%208.png" alt="Story 8" loading="lazy"></div>
       <!-- Shooting photo -->
       <div class="gal-section"><div class="gal-section-label">Shooting photo</div></div>
-      <div class="gal-item" onclick="openLB('krieger',9)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="Shooting 1" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',10)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour%20(1).png" alt="Shooting 2" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',11)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/2.png" alt="Shooting 3" loading="lazy"></div>
-      <div class="gal-item" onclick="openLB('krieger',12)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/5.png" alt="Shooting 4" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',10)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="Shooting 1" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',11)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour%20(1).png" alt="Shooting 2" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',12)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/2.png" alt="Shooting 3" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',13)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/5.png" alt="Shooting 4" loading="lazy"></div>
     </div>
   </div>
 
@@ -822,9 +865,21 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       <div class="gal-item" onclick="openLB('tds',2)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20story.png" alt="Story 1" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('tds',3)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20story%202.png" alt="Story 2" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('tds',4)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Story%20%C3%A0%20la%20une%20pr%C3%A9sentant%20offre.jpg" alt="Story à la une" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Gray%20And%20Brown%20Minimalist%20Fitness%20Instagram%20Story%20(2).png" alt="Story fitness" loading="lazy"></div>
+      <!-- Montages vidéos -->
+      <div class="gal-section"><div class="gal-section-label">Montages vidéos</div></div>
+      <div class="gal-item" onclick="openLB('tds',6)" style="aspect-ratio:16/9;background:#000;">
+        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/v6.mp4" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+      </div>
+      <div class="gal-item" onclick="openLB('tds',7)" style="aspect-ratio:16/9;background:#000;">
+        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/v5.mp4" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+      </div>
+      <div class="gal-item" onclick="openLB('tds',8)" style="aspect-ratio:16/9;background:#000;">
+        <video src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Vid%C3%A9o%208%20mont%C3%A9%20sacha%20(1).mp4" muted loop autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+      </div>
       <!-- Carrousel -->
       <div class="gal-section"><div class="gal-section-label">Carrousel</div></div>
-      <div class="gal-item" onclick="openLB('tds',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="Carrousel Temple du Sport" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('tds',9)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="Carrousel Temple du Sport" loading="lazy"></div>
     </div>
   </div>
 
@@ -867,6 +922,25 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </section>
 </div>
+
+<div class="divider"></div>
+
+<!-- ─── CV ─────────────────────────────────────── -->
+<section id="cv" class="section">
+  <div class="eyebrow">Mon CV</div>
+  <div class="cv-grid reveal">
+    <div class="cv-img-wrap">
+      <img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Curriculum%20Vitae%20(1).png" alt="CV Quentin Krieger" loading="lazy">
+    </div>
+    <div class="cv-text">
+      <h2>Mon <em>curriculum<br>vitae</em></h2>
+      <p>Retrouvez l'ensemble de mon parcours, mes compétences et mes expériences dans mon CV complet. Disponible en version interactive pour une consultation détaillée.</p>
+      <a href="https://canva.link/p0kwlkpo0x9xkbt" target="_blank" class="cv-btn">
+        Consulter le CV complet →
+      </a>
+    </div>
+  </div>
+</section>
 
 <div class="divider"></div>
 
@@ -936,6 +1010,12 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 // Gallery data for lightbox
 const GITHUB = 'https://raw.githubusercontent.com/Quentin33782/Portfolio/main/';
 const galleries = {
+  kresala: [
+    {type:'img',src:GITHUB+'WhatsApp%20Image%202024-11-19%20at%2021.46.04.jpeg'},
+    {type:'img',src:GITHUB+'WhatsApp%20Image%202024-11-19%20at%2021.46.03.jpeg'},
+    {type:'img',src:GITHUB+'WhatsApp%20Image%202024-11-19%20at%2021.46.13.jpeg'},
+    {type:'img',src:GITHUB+'WhatsApp%20Image%202024-11-19%20at%2021.46.09.jpeg'},
+  ],
   swell: [
     {type:'img',src:GITHUB+'Compte%20swell%20surfers.png'},
     {type:'img',src:GITHUB+'Chiffre%20compte%20swell%20surfers.png'},
@@ -947,6 +1027,7 @@ const galleries = {
     {type:'img',src:GITHUB+'Publication%20swell%20surfers%204.jpg'},
   ],
   krieger: [
+    {type:'img',src:GITHUB+'IMG_0801.png'},
     {type:'img',src:GITHUB+'IMG_0802.jpeg'},
     {type:'img',src:GITHUB+'AK%20-%201.png'},
     {type:'img',src:GITHUB+'AK%20-%202.png'},
@@ -977,6 +1058,8 @@ const galleries = {
     {type:'img',src:GITHUB+'datatiktok.jpg'},
     {type:'video',src:GITHUB+'ASMR.mov'},
     {type:'video',src:GITHUB+'0213.mov'},
+    {type:'video',src:GITHUB+'ID20250205160205%20(1).mp4'},
+    {type:'video',src:GITHUB+'VID20250205155942%20(1).mp4'},
   ],
   tds: [
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport%20compte.png'},
@@ -984,6 +1067,10 @@ const galleries = {
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport%20story.png'},
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport%20story%202.png'},
     {type:'img',src:GITHUB+'Story%20%C3%A0%20la%20une%20pr%C3%A9sentant%20offre.jpg'},
+    {type:'img',src:GITHUB+'Gray%20And%20Brown%20Minimalist%20Fitness%20Instagram%20Story%20(2).png'},
+    {type:'video',src:GITHUB+'v6.mp4'},
+    {type:'video',src:GITHUB+'v5.mp4'},
+    {type:'video',src:GITHUB+'Vid%C3%A9o%208%20mont%C3%A9%20sacha%20(1).mp4'},
     {type:'img',src:GITHUB+'Le%20temple%20du%20sport.png'},
   ],
 };
