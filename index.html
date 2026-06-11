@@ -293,6 +293,16 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .reveal-d2{transition-delay:.2s;}
 .reveal-d3{transition-delay:.3s;}
 
+/* ─── MARQUEE ────────────────────────────────────────────── */
+.marquee-section{padding:28px 0;overflow:hidden;display:flex;flex-direction:column;gap:10px;background:var(--bg);}
+.marquee-track{display:flex;gap:10px;width:max-content;will-change:transform;}
+.marquee-track.ltr{animation:mLTR 40s linear infinite;}
+.marquee-track.rtl{animation:mRTL 36s linear infinite;}
+@keyframes mLTR{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+@keyframes mRTL{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee-img{height:100px;width:auto;border-radius:20px;object-fit:cover;flex-shrink:0;display:block;pointer-events:none;}
+.marquee-section:hover .marquee-track{animation-play-state:paused;}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media(max-width:900px){
   nav{padding:16px 24px;}
@@ -409,6 +419,58 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 </section>
 
 <div class="divider"></div>
+
+<!-- ─── MARQUEE ──────────────────────────────────── -->
+<div class="marquee-section">
+  <!-- Row 1 : gauche → droite -->
+  <div class="marquee-track ltr">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%201.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%201.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Cyclezen%20shooting.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%202.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%203.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%203.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%205.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/compteoceneo.jpg" alt="">
+    <!-- duplicate pour boucle -->
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%201.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%201.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Cyclezen%20shooting.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%202.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%203.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%203.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%205.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/compteoceneo.jpg" alt="">
+  </div>
+  <!-- Row 2 : droite → gauche -->
+  <div class="marquee-track rtl">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%202.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%204.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour%20(1).png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%206.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20feed.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%207.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Swell%20surfers%20post.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%208.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datainsta.jpg" alt="">
+    <!-- duplicate pour boucle -->
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%202.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Publication%20swell%20surfers%204.jpg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour%20(1).png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%206.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Le%20temple%20du%20sport%20feed.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0803.jpeg" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%207.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Swell%20surfers%20post.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%208.png" alt="">
+    <img class="marquee-img" src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/datainsta.jpg" alt="">
+  </div>
+</div>
 
 <!-- ─── ABOUT ──────────────────────────────────── -->
 <div class="about-bg">
@@ -746,6 +808,11 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
       <div class="gal-item" onclick="openLB('krieger',5)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%206.png" alt="Atelier Krieger 6" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('krieger',6)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%207.png" alt="Atelier Krieger 7" loading="lazy"></div>
       <div class="gal-item" onclick="openLB('krieger',7)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/AK%20-%208.png" alt="Atelier Krieger 8" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',8)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/IMG_0802.jpeg" alt="Atelier Krieger photo" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',9)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour.png" alt="Post Duffour" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',10)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/Post%20Duffour%20(1).png" alt="Post Duffour 2" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',11)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/2.png" alt="Atelier Krieger visuel" loading="lazy"></div>
+      <div class="gal-item" onclick="openLB('krieger',12)"><img src="https://raw.githubusercontent.com/Quentin33782/Portfolio/main/5.png" alt="Atelier Krieger visuel 2" loading="lazy"></div>
     </div>
   </div>
 
@@ -899,6 +966,11 @@ const galleries = {
     {type:'img',src:GITHUB+'AK%20-%206.png'},
     {type:'img',src:GITHUB+'AK%20-%207.png'},
     {type:'img',src:GITHUB+'AK%20-%208.png'},
+    {type:'img',src:GITHUB+'IMG_0802.jpeg'},
+    {type:'img',src:GITHUB+'Post%20Duffour.png'},
+    {type:'img',src:GITHUB+'Post%20Duffour%20(1).png'},
+    {type:'img',src:GITHUB+'2.png'},
+    {type:'img',src:GITHUB+'5.png'},
   ],
   cyclezen: [
     {type:'img',src:GITHUB+'Cyclezen%20shooting.png'},
