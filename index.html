@@ -286,6 +286,9 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .foot-right{font-family:var(--font-mono);font-size:.65rem;color:var(--mid);}
 .foot-right a{color:var(--orange);}
 
+/* ─── POINTS D'APPUI ANIMATION */
+#pa-grid > div{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease);}
+#pa-grid > div.pa-visible{opacity:1;transform:translateY(0);}
 /* ─── ANIMATIONS ─────────────────────────────────────────── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
@@ -1194,7 +1197,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
   <div class="eyebrow">Ce que j'apporte</div>
   <h2 class="section-title">Mes <em>points d'appui</em></h2>
 
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="reveal">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="reveal" id="pa-grid">
 
     <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px 30px;display:flex;gap:20px;align-items:flex-start;">
       <div style="width:44px;height:44px;border-radius:12px;background:rgba(232,147,90,.12);border:1px solid rgba(232,147,90,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
@@ -1202,7 +1205,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
       </div>
       <div>
         <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Méthode de travail organisée & disciplinée</div>
-        <div style="color:var(--text);">Je planifie, priorise et tiens mes délais. Chaque projet est cadré dès le départ avec des objectifs clairs et un suivi rigoureux.</div>
+        <div style="font-size:.88rem;color:#2A4A38;line-height:1.65;">Je planifie, priorise et tiens mes délais. Chaque projet est cadré dès le départ avec des objectifs clairs et un suivi rigoureux.</div>
       </div>
     </div>
 
@@ -1212,7 +1215,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
       </div>
       <div>
         <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Engagement total dans les projets</div>
-        <div style="color:var(--text);">Je m'investis pleinement dans chaque mission, avec une vraie implication personnelle et le souci de livrer un travail de qualité.</div>
+        <div style="font-size:.88rem;color:#2A4A38;line-height:1.65;">Je m'investis pleinement dans chaque mission, avec une vraie implication personnelle et le souci de livrer un travail de qualité.</div>
       </div>
     </div>
 
@@ -1222,7 +1225,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
       </div>
       <div>
         <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Recherche constante d'amélioration</div>
-        <div style="color:var(--text);">Analyser les résultats, tirer des leçons et ajuster — c'est une posture naturelle pour moi, dans mes projets comme dans ma façon de travailler.</div>
+        <div style="font-size:.88rem;color:#2A4A38;line-height:1.65;">Analyser les résultats, tirer des leçons et ajuster — c'est une posture naturelle pour moi, dans mes projets comme dans ma façon de travailler.</div>
       </div>
     </div>
 
@@ -1232,7 +1235,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
       </div>
       <div>
         <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Sens des responsabilités</div>
-        <div style="color:var(--text);">Je prends mes engagements au sérieux et assume pleinement mes décisions. On peut compter sur moi pour aller au bout.</div>
+        <div style="font-size:.88rem;color:#2A4A38;line-height:1.65;">Je prends mes engagements au sérieux et assume pleinement mes décisions. On peut compter sur moi pour aller au bout.</div>
       </div>
     </div>
 
