@@ -309,7 +309,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .marquee-section:hover .marquee-track{animation-play-state:paused;}
 
 /* ─── CV SECTION ─────────────────────────────────────────── */
-#cv{background:var(--bg2);}
+#cv{background:transparent;}
 .cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;}
 .cv-img-wrap{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);border:1px solid var(--border);}
 .cv-img-wrap img{width:100%;display:block;border-radius:20px;}
@@ -514,12 +514,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
   <a href="#hero" class="nav-logo">QK<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">Profil</a></li>
+    <li><a href="#formation">Formation</a></li>
     <li><a href="#experiences">Expériences</a></li>
     <li><a href="#competences">Compétences</a></li>
     <li><a href="#preuves">Portfolio</a></li>
-    <li><a href="#formation">Formation</a></li>
     <li><a href="#objectifs">Objectifs</a></li>
-    <li><a href="#cv">CV</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Me contacter</a>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -530,12 +529,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
 <!-- Mobile menu -->
 <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
   <a href="#about" onclick="closeMobileMenu()">Profil</a>
+  <a href="#formation" onclick="closeMobileMenu()">Formation</a>
   <a href="#experiences" onclick="closeMobileMenu()">Expériences</a>
   <a href="#competences" onclick="closeMobileMenu()">Compétences</a>
   <a href="#preuves" onclick="closeMobileMenu()">Portfolio</a>
-  <a href="#formation" onclick="closeMobileMenu()">Formation</a>
   <a href="#objectifs" onclick="closeMobileMenu()">Objectifs</a>
-  <a href="#cv" onclick="closeMobileMenu()">CV</a>
   <a href="#contact" class="nav-mobile-cta" onclick="closeMobileMenu()">Me contacter</a>
 </div>
 
@@ -674,6 +672,44 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
           <div class="tool-badge" data-tip="Claude" style="background:#D97757;"><img src="https://cdn.simpleicons.org/claude/ffffff" alt="Claude"></div>
           <div class="tool-badge" data-tip="Gemini"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Gemini"></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ─── FORMATION ──────────────────────────────── -->
+<div class="form-bg">
+<section id="formation" class="section">
+  <div class="eyebrow">Parcours académique</div>
+  <h2 class="section-title">Ma <em>formation</em></h2>
+  <div class="formation-grid">
+    <div class="form-card reveal">
+      <div class="form-year">2019 → 2022</div>
+      <div class="form-degree">Baccalauréat Général — Mention Bien</div>
+      <div class="form-school"><strong>Lycée Grand Air</strong>, Arcachon</div>
+    </div>
+    <div class="form-card reveal reveal-d1">
+      <div class="form-year">2022 → 2023</div>
+      <div class="form-degree">Bachelor Marketing & Business</div>
+      <div class="form-school"><strong>Idrac Business School</strong>, Bordeaux</div>
+    </div>
+    <div class="form-card reveal reveal-d2">
+      <div class="form-year">2023 → 2026</div>
+      <div class="form-degree">BUT Techniques de Commercialisation</div>
+      <div class="form-school"><strong>IUT de Bordeaux</strong> — Spé. Marketing Digital & Entrepreneuriat</div>
+    </div>
+    <div class="form-card next reveal">
+      <div>
+        <div class="form-year">2026 → 2028 — Prochaine étape</div>
+        <div class="form-degree" style="font-size:1.25rem;">Master Entrepreneuriat &<br>Management de Projet</div>
+        <div class="form-school"><strong>IAE de Bordeaux</strong> — Rentrée 2026</div>
+      </div>
+      <div class="form-next-badge">
+        <div class="form-next-badge-label">Objectif</div>
+        <div class="form-next-badge-val">Entrepreneuriat</div>
       </div>
     </div>
   </div>
@@ -1075,44 +1111,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
 
 <div class="divider"></div>
 
-<!-- ─── FORMATION ──────────────────────────────── -->
-<div class="form-bg">
-<section id="formation" class="section">
-  <div class="eyebrow">Parcours académique</div>
-  <h2 class="section-title">Ma <em>formation</em></h2>
-  <div class="formation-grid">
-    <div class="form-card reveal">
-      <div class="form-year">2019 → 2022</div>
-      <div class="form-degree">Baccalauréat Général — Mention Bien</div>
-      <div class="form-school"><strong>Lycée Grand Air</strong>, Arcachon</div>
-    </div>
-    <div class="form-card reveal reveal-d1">
-      <div class="form-year">2022 → 2023</div>
-      <div class="form-degree">Bachelor Marketing & Business</div>
-      <div class="form-school"><strong>Idrac Business School</strong>, Bordeaux</div>
-    </div>
-    <div class="form-card reveal reveal-d2">
-      <div class="form-year">2023 → 2026</div>
-      <div class="form-degree">BUT Techniques de Commercialisation</div>
-      <div class="form-school"><strong>IUT de Bordeaux</strong> — Spé. Marketing Digital & Entrepreneuriat</div>
-    </div>
-    <div class="form-card next reveal">
-      <div>
-        <div class="form-year">2026 → 2028 — Prochaine étape</div>
-        <div class="form-degree" style="font-size:1.25rem;">Master Entrepreneuriat &<br>Management de Projet</div>
-        <div class="form-school"><strong>IAE de Bordeaux</strong> — Rentrée 2026</div>
-      </div>
-      <div class="form-next-badge">
-        <div class="form-next-badge-label">Objectif</div>
-        <div class="form-next-badge-val">Entrepreneuriat</div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<div class="divider"></div>
-
 <!-- ─── OBJECTIFS ───────────────────────────────── -->
 <section id="objectifs" class="section">
   <div class="eyebrow">Projet universitaire & professionnel</div>
@@ -1191,8 +1189,60 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
 
 <div class="divider"></div>
 
+<!-- ─── POINTS D'APPUI ─────────────────────────── -->
+<section id="points-appui" class="section">
+  <div class="eyebrow">Ce que j'apporte</div>
+  <h2 class="section-title">Mes <em>points d'appui</em></h2>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="reveal">
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px 30px;display:flex;gap:20px;align-items:flex-start;">
+      <div style="width:44px;height:44px;border-radius:12px;background:rgba(232,147,90,.12);border:1px solid rgba(232,147,90,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8935A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Méthode de travail organisée & disciplinée</div>
+        <div style="color:var(--text);">Je planifie, priorise et tiens mes délais. Chaque projet est cadré dès le départ avec des objectifs clairs et un suivi rigoureux.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px 30px;display:flex;gap:20px;align-items:flex-start;">
+      <div style="width:44px;height:44px;border-radius:12px;background:rgba(123,97,255,.1);border:1px solid rgba(123,97,255,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B61FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Engagement total dans les projets</div>
+        <div style="color:var(--text);">Je m'investis pleinement dans chaque mission, avec une vraie implication personnelle et le souci de livrer un travail de qualité.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px 30px;display:flex;gap:20px;align-items:flex-start;">
+      <div style="width:44px;height:44px;border-radius:12px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Recherche constante d'amélioration</div>
+        <div style="color:var(--text);">Analyser les résultats, tirer des leçons et ajuster — c'est une posture naturelle pour moi, dans mes projets comme dans ma façon de travailler.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px 30px;display:flex;gap:20px;align-items:flex-start;">
+      <div style="width:44px;height:44px;border-radius:12px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:1rem;color:var(--dark-text);margin-bottom:8px;">Sens des responsabilités</div>
+        <div style="color:var(--text);">Je prends mes engagements au sérieux et assume pleinement mes décisions. On peut compter sur moi pour aller au bout.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="divider"></div>
+
 <!-- ─── CV ─────────────────────────────────────── -->
 <section id="cv" class="section">
+  <div style="background:var(--bg2);border-radius:20px;padding:60px;">
   <div class="eyebrow">Mon CV</div>
   <div class="cv-grid reveal">
     <div class="cv-img-wrap">
@@ -1470,7 +1520,7 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 }, {passive:true});
 
-const sections = ['hero','about','experiences','competences','preuves','formation','objectifs','cv'];
+const sections = ['hero','about','formation','experiences','competences','preuves','objectifs','cv','points-appui'];
 const navLinks = document.querySelectorAll('.nav-links a');
 const secObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
