@@ -1536,6 +1536,22 @@ const secObs = new IntersectionObserver(entries => {
 }, {threshold:.3});
 sections.forEach(id => { const el=document.getElementById(id); if(el) secObs.observe(el); });
 
+// ─── POINTS D'APPUI STAGGER
+(function(){
+  const grid = document.getElementById('pa-grid');
+  if(!grid) return;
+  const cards = Array.from(grid.querySelectorAll(':scope > div'));
+  const paObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        cards.forEach((c,i) => setTimeout(()=>c.classList.add('pa-visible'), i*130));
+        paObs.disconnect();
+      }
+    });
+  },{threshold:0.1});
+  paObs.observe(grid);
+})();
+
 // 3D TILT
 function addTilt(selector, strength) {
   document.querySelectorAll(selector).forEach(el => {
