@@ -49,8 +49,8 @@ button{border:none;background:none;font-family:inherit;cursor:none;}
 ::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px;}
 
 /* ─── CURSOR ─────────────────────────────────────────────── */
-#cur{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;width:10px;height:10px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:difference;}
-#cur-ring{position:fixed;top:0;left:0;width:40px;height:40px;border:1.5px solid rgba(110,168,207,.7);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .08s linear,top .08s linear,width .2s,height .2s,border-color .2s;will-change:transform;}
+#cur{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;width:10px;height:10px;background:#fff;border-radius:50%;mix-blend-mode:difference;will-change:transform;}
+#cur-ring{position:fixed;top:0;left:0;width:40px;height:40px;border:1.5px solid rgba(110,168,207,.7);border-radius:50%;pointer-events:none;z-index:9998;will-change:transform;transition:width .2s,height .2s,border-color .2s;}
 
 body.hovered #cur-ring{width:56px;height:56px;border-color:var(--orange);}
 
@@ -1521,17 +1521,13 @@ setInterval(() => {
 const curDot = document.getElementById('cur');
 const curRing = document.getElementById('cur-ring');
 let mx=0, my=0, rx=0, ry=0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  curDot.style.left = mx + 'px';
-  curDot.style.top = my + 'px';
-});
-(function animRing() {
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animCursor() {
   rx += (mx - rx) * .12;
   ry += (my - ry) * .12;
-  curRing.style.left = rx + 'px';
-  curRing.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
+  curDot.style.transform = 'translate3d('+(mx-5)+'px,'+(my-5)+'px,0)';
+  curRing.style.transform = 'translate3d('+(rx-20)+'px,'+(ry-20)+'px,0)';
+  requestAnimationFrame(animCursor);
 })();
 document.querySelectorAll('a,button,[onclick]').forEach(el => {
   el.addEventListener('mouseenter', () => document.body.classList.add('hovered'));
