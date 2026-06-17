@@ -49,8 +49,6 @@ button{border:none;background:none;font-family:inherit;}
 ::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px;}
 
 /* ─── CURSOR ─────────────────────────────────────────────── */
-body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='7' fill='rgba(122%2C184%2C147%2C0.18)' stroke='%231A3626' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%231A3626'/%3E%3C/svg%3E") 10 10, auto; }
-a { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='rgba(110%2C168%2C207%2C0.25)' stroke='%236EA8CF' stroke-width='2'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%231A3626'/%3E%3C/svg%3E") 10 10, pointer; }
 
 /* ─── PROGRESS ───────────────────────────────────────────── */
 #prog{position:fixed;top:0;left:0;height:2px;background:var(--blue);z-index:200;width:0;transition:width .1s linear;}
@@ -1463,7 +1461,6 @@ function showProof(key, btn) {
 
 // Gallery items stagger
 const galItems = document.querySelectorAll('.gal-item');
- });
 
 // tl-items individual stagger within timeline
 document.querySelectorAll('.tl-item').forEach((item, i) => {
