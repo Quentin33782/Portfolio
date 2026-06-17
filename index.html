@@ -114,7 +114,7 @@ nav.scrolled{padding:14px 60px;}
 
 .eyebrow{font-family:var(--font-mono);font-size:.65rem;color:var(--orange-text);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
 .eyebrow::before{content:'';width:20px;height:1px;background:var(--orange);display:block;}
-.section-title{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.02em;line-height:1.05;margin-bottom:56px;}
+.section-title{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.01em;line-height:1.18;margin-bottom:56px;}
 .section-title em{font-style:normal;color:var(--orange);}
 
 /* ─── ABOUT (light) ──────────────────────────────────────── */
@@ -195,8 +195,8 @@ nav.scrolled{padding:14px 60px;}
 .comp-cat-label{font-family:var(--font-mono);font-size:.65rem;color:var(--orange-text);letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px;}
 .comp-cat-label::after{content:'';flex:1;height:1px;background:var(--border);}
 .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.comp-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;transition:transform .2s var(--ease),border-color .2s;opacity:0;transform:translateY(20px);}
-.comp-card.visible{opacity:1;transform:translateY(0);transition:opacity .5s var(--ease),transform .5s var(--ease),border-color .2s;}
+.comp-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;transition:transform .2s var(--ease),border-color .2s;opacity:1;transform:translateY(20px);}
+
 .comp-card:hover{transform:translateY(-4px);border-color:rgba(122,184,147,.25);}
 .comp-name{font-weight:600;font-size:.9rem;margin-bottom:6px;}
 .comp-xp{font-family:var(--font-mono);font-size:.6rem;color:var(--mid);margin-bottom:14px;line-height:1.5;}
@@ -223,8 +223,8 @@ nav.scrolled{padding:14px 60px;}
 
 /* Gallery grid */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.gal-item{border-radius:10px;overflow:hidden;aspect-ratio:4/3;cursor:none;position:relative;background:var(--bg3);opacity:0;transform:scale(.97);transition:opacity .5s var(--ease),transform .5s var(--ease);}
-.gal-item.gal-visible{opacity:1;transform:scale(1);}
+.gal-item{border-radius:10px;overflow:hidden;aspect-ratio:4/3;cursor:none;position:relative;background:var(--bg3);opacity:1;transform:scale(.97);transition:opacity .5s var(--ease),transform .5s var(--ease);}
+
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease);}
 .gal-item:hover img{transform:scale(1.06);}
 .gal-item::after{content:'⊕';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.4);color:#fff;font-size:1.5rem;opacity:0;transition:opacity .2s;}
@@ -288,17 +288,17 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;align-i
 .foot-right{font-family:var(--font-mono);font-size:.65rem;color:var(--mid);}
 .foot-right a{color:var(--orange);}
 
-/* ─── POINTS D'APPUI ANIMATION */
-#pa-grid > div{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease);}
-#pa-grid > div.pa-visible{opacity:1;transform:translateY(0);}
+/* ─── STAGGER ANIMATION (global) */
+.stagger-grid > *{opacity:1;transform:none;}
+.tl-item.reveal{opacity:1;transform:none;}
 /* ─── ANIMATIONS ─────────────────────────────────────────── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.7);}}
 @keyframes drawLine{from{transform:scaleY(0);}to{transform:scaleY(1);}}
 
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal{opacity:1;transform:none;}
+
 .reveal-d1{transition-delay:.1s;}
 .reveal-d2{transition-delay:.2s;}
 .reveal-d3{transition-delay:.3s;}
@@ -641,7 +641,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
     <div class="about-text reveal">
       <p>22 ans, étudiant en <strong>BUT Techniques de Commercialisation</strong> à l'IUT de Bordeaux, spécialisation marketing digital et entrepreneuriat.</p>
       <p>J'ai eu la chance de travailler sur des projets concrets et variés : SEO/SEA, webmastering, e-commerce, social media B2B & B2C. Chaque expérience m'a appris quelque chose de tangible.</p>
-      <p>Actuellement en alternance chez <strong>Cyclezen</strong>, je pilote en autonomie toute la stratégie d'acquisition digitale de l'entreprise, du SEO/SEA à la création de contenu, en passant par la gestion du site, des réseaux sociaux et des campagnes publicitaires.</p>
+      <p>Actuellement en alternance chez <strong>Cyclezen</strong>, je pilote en autonomie toute la stratégie d'acquisition digitale de l'entreprise — du SEO/SEA à la création de contenu, en passant par la gestion du site, des réseaux sociaux et des campagnes publicitaires.</p>
       <div class="tags">
         <span class="tag active">Entrepreneuriat</span>
         <span class="tag active">Growth Marketing</span>
@@ -698,7 +698,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
 <section id="formation" class="section">
   <div class="eyebrow reveal">Parcours académique</div>
   <h2 class="section-title reveal">Ma <em>formation</em></h2>
-  <div class="formation-grid">
+  <div class="formation-grid stagger-grid">
     <div class="form-card reveal">
       <div class="form-year">2019 → 2022</div>
       <div class="form-degree">Baccalauréat Général — Mention Bien</div>
@@ -866,34 +866,39 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
   <div class="eyebrow reveal">Savoir-faire</div>
   <h2 class="section-title reveal">Mes <em>compétences</em></h2>
   <div class="comp-cats">
-    <div class="reveal">
-      <div class="comp-cat-label">Communication & Réseaux Sociaux</div>
-      <div class="comp-grid">
+    <div>
+      <div class="comp-cat-label">Réseaux Sociaux & Community Management</div>
+      <div class="comp-grid stagger-grid">
+        <div class="comp-card"><div class="comp-name">Gérer une stratégie Social Media</div><div class="comp-xp">Swell Surfers · Cyclezen · Oceneo</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Communiquer sur les réseaux sociaux</div><div class="comp-xp">Temple du Sport · Swell Surfers · Atelier Krieger · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Créer du contenu pour les réseaux sociaux</div><div class="comp-xp">Temple du Sport · Swell Surfers · Oceneo · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
-        <div class="comp-card"><div class="comp-name">Gérer une stratégie Social Media</div><div class="comp-xp">Swell Surfers · Cyclezen · Oceneo</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        <div class="comp-card"><div class="comp-name">Créer un compte Instagram professionnel</div><div class="comp-xp">Temple du Sport · Swell Surfers · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        <div class="comp-card"><div class="comp-name">Social Media B2B (LinkedIn)</div><div class="comp-xp">Cyclezen (alternance)</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
       </div>
     </div>
-    <div class="reveal">
-      <div class="comp-cat-label">Techniques & Créatives</div>
-      <div class="comp-grid">
-        <div class="comp-card"><div class="comp-name">Créer un compte Instagram professionnel</div><div class="comp-xp">Temple du Sport · Swell Surfers · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+    <div>
+      <div class="comp-cat-label">Création de Contenu & Visuels</div>
+      <div class="comp-grid stagger-grid">
+        <div class="comp-card"><div class="comp-name">Monter des vidéos (Reels, Shorts)</div><div class="comp-xp">Temple du Sport · Oceneo · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Utiliser l'IA pour créer des visuels</div><div class="comp-xp">Cyclezen · Oceneo · Usage quotidien</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Créer des templates Canva</div><div class="comp-xp">Temple du Sport · Swell Surfers · Oceneo</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
-        <div class="comp-card"><div class="comp-name">Monter des vidéos (Reels, Shorts)</div><div class="comp-xp">Temple du Sport · Oceneo · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        <div class="comp-card"><div class="comp-name">Supports commerciaux & visuels</div><div class="comp-xp">Oceneo · Temple du Sport</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="comp-cat-label">Web, SEO & Rédaction</div>
+      <div class="comp-grid stagger-grid">
         <div class="comp-card"><div class="comp-name">Créer et gérer un site internet</div><div class="comp-xp">Cyclezen · Kresala Surf Eskola</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        <div class="comp-card"><div class="comp-name">SEO — Référencement naturel</div><div class="comp-xp">Cyclezen · Oceneo · Kresala</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Rédiger des articles de blog SEO</div><div class="comp-xp">Cyclezen · Oceneo · Kresala Surf Eskola</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
       </div>
     </div>
-    <div class="reveal">
-      <div class="comp-cat-label">Acquisition & Growth</div>
-      <div class="comp-grid">
-        <div class="comp-card"><div class="comp-name">SEO — Référencement naturel</div><div class="comp-xp">Cyclezen · Oceneo · Kresala</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+    <div>
+      <div class="comp-cat-label">Marketing Digital & Acquisition</div>
+      <div class="comp-grid stagger-grid">
         <div class="comp-card"><div class="comp-name">SEA — Campagnes Google Ads</div><div class="comp-xp">Cyclezen (alternance)</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Optimisation e-commerce & UX</div><div class="comp-xp">Oceneo · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Benchmarking & Positionnement</div><div class="comp-xp">Oceneo · Cyclezen</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
-        <div class="comp-card"><div class="comp-name">Social Media B2B (LinkedIn)</div><div class="comp-xp">Cyclezen (alternance)</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
-        <div class="comp-card"><div class="comp-name">Supports commerciaux & visuels</div><div class="comp-xp">Oceneo · Temple du Sport</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Automatisation marketing</div><div class="comp-xp">Cyclezen · HubSpot · workflows e-mail</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="comp-card"><div class="comp-name">Newsletter &amp; Lead Nurturing</div><div class="comp-xp">Cyclezen · séquences e-mail · conversion prospects</div><div class="comp-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
       </div>
@@ -1129,7 +1134,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
   <div class="eyebrow reveal">Projet universitaire & professionnel</div>
   <h2 class="section-title reveal">Court, moyen <em>& long terme</em></h2>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;" class="reveal">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;" class="reveal stagger-grid">
 
     <!-- Court terme -->
     <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden;">
@@ -1148,7 +1153,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
           <span style="color:var(--orange);margin-top:3px;flex-shrink:0;">→</span><span>Intégrer le Master Entrepreneuriat & Management de Projet à l'IAE de Bordeaux</span>
         </div>
         <div style="display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--text);">
-          <span style="color:var(--orange);margin-top:3px;flex-shrink:0;">→</span><span>Développer mes compétences en entrepreneuriat et gestion de projet </span>
+          <span style="color:var(--orange);margin-top:3px;flex-shrink:0;">→</span><span>Développer mes compétences en gestion de projet et stratégie d'entreprise</span>
         </div>
       </div>
     </div>
@@ -1207,7 +1212,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
   <div class="eyebrow reveal">Ce que j'apporte</div>
   <h2 class="section-title reveal">Mes <em>points d'appui</em></h2>
 
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="reveal" id="pa-grid">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="stagger-grid" id="pa-grid">
 
     <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px 30px;display:flex;gap:20px;align-items:flex-start;">
       <div style="width:44px;height:44px;border-radius:12px;background:rgba(232,147,90,.12);border:1px solid rgba(232,147,90,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
@@ -1280,7 +1285,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
       <h2 class="contact-title">Travaillons<br><em>ensemble.</em></h2>
       <p class="contact-sub">Ouvert aux opportunités de stage, alternance, collaboration ou simplement pour échanger sur un projet. N'hésitez pas à me contacter.</p>
       <div class="clinks">
-        <a class="reveal" href="mailto:krieger.quentin33@orange.fr" class="clink reveal" id="email-clink" onclick="copyEmail(event)">
+        <a href="mailto:krieger.quentin33@orange.fr" class="clink" id="email-clink" onclick="copyEmail(event)">
           <div class="clink-icon">✉</div>
           <div><span class="clink-label">Email</span><span class="clink-val">krieger.quentin33@orange.fr</span></div>
           <span id="email-arrow" style="color:var(--mid-light);margin-left:auto;font-family:var(--font-mono);font-size:.72rem;transition:all .2s;">→</span>
@@ -1457,27 +1462,14 @@ function showProof(key, btn) {
   if(pane) pane.classList.add('active');
 }
 
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
 
 // Comp cards stagger
-const compObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){ e.target.classList.add('visible'); compObs.unobserve(e.target); }
-  });
-},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.comp-card').forEach(el => compObs.observe(el));
+
 
 // Gallery items stagger
 const galItems = document.querySelectorAll('.gal-item');
-const galObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){ e.target.classList.add('gal-visible'); galObs.unobserve(e.target); }
-  });
-},{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
-galItems.forEach((el,i) => { el.style.transitionDelay = (i%6 * 0.07) + 's'; galObs.observe(el); });
+ });
 
 // tl-items individual stagger within timeline
 document.querySelectorAll('.tl-item').forEach((item, i) => {
@@ -1568,21 +1560,7 @@ const secObs = new IntersectionObserver(entries => {
 }, {threshold:.3});
 sections.forEach(id => { const el=document.getElementById(id); if(el) secObs.observe(el); });
 
-// ─── POINTS D'APPUI STAGGER
-(function(){
-  const grid = document.getElementById('pa-grid');
-  if(!grid) return;
-  const cards = Array.from(grid.querySelectorAll(':scope > div'));
-  const paObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        cards.forEach((c,i) => setTimeout(()=>c.classList.add('pa-visible'), i*130));
-        paObs.disconnect();
-      }
-    });
-  },{threshold:0.1});
-  paObs.observe(grid);
-})();
+
 
 // 3D TILT
 function addTilt(selector, strength) {
