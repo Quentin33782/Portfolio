@@ -38,10 +38,10 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;scroll-padding-top:90px;}
-body{background:var(--bg);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.65;cursor:none;overflow-x:hidden;}
+body{background:var(--bg);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.65;overflow-x:hidden;}
 img{max-width:100%;height:auto;display:block;}
 a{text-decoration:none;color:inherit;}
-button{border:none;background:none;font-family:inherit;cursor:none;}
+button{border:none;background:none;font-family:inherit;}
 
 /* ─── SCROLLBAR ───────────────────────────────────────────── */
 ::-webkit-scrollbar{width:3px;}
@@ -49,9 +49,8 @@ button{border:none;background:none;font-family:inherit;cursor:none;}
 ::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px;}
 
 /* ─── CURSOR ─────────────────────────────────────────────── */
-#cur-dot{position:fixed;pointer-events:none;z-index:9999;width:10px;height:10px;background:var(--white);border-radius:50%;transform:translate(-50%,-50%);}
-#cur-ring{position:fixed;pointer-events:none;z-index:9998;width:38px;height:38px;border:2px solid var(--orange);border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s;}
-body.hovered #cur-ring{width:54px;height:54px;border-color:var(--blue);}
+body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='7' fill='rgba(122%2C184%2C147%2C0.18)' stroke='%231A3626' stroke-width='1.5'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%231A3626'/%3E%3C/svg%3E") 10 10, auto; }
+a { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='rgba(110%2C168%2C207%2C0.25)' stroke='%236EA8CF' stroke-width='2'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%231A3626'/%3E%3C/svg%3E") 10 10, pointer; }
 
 /* ─── PROGRESS ───────────────────────────────────────────── */
 #prog{position:fixed;top:0;left:0;height:2px;background:var(--blue);z-index:200;width:0;transition:width .1s linear;}
@@ -222,7 +221,7 @@ nav.scrolled{padding:14px 60px;}
 
 /* Gallery grid */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.gal-item{border-radius:10px;overflow:hidden;aspect-ratio:4/3;cursor:none;position:relative;background:var(--bg3);}
+.gal-item{border-radius:10px;overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--bg3);}
 
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease);}
 .gal-item:hover img{transform:scale(1.06);}
@@ -509,10 +508,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
 <div id="toast">✓ Email copié !</div>
 
 <!-- Cursor -->
-<!-- Cursor -->
-<div id="cur-dot"></div>
-<div id="cur-ring"></div>
-
 <!-- Lightbox -->
 <div id="lightbox">
   <span class="lb-close">✕</span>
@@ -1520,24 +1515,7 @@ setInterval(() => {
 
 
 
-// ─── CUSTOM CURSOR
-const curDot = document.getElementById('cur-dot');
-const curRing = document.getElementById('cur-ring');
-let mx = -200, my = -200, rx = -200, ry = -200;
-window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, {passive:true});
-(function cursorLoop() {
-  rx += (mx - rx) * .12;
-  ry += (my - ry) * .12;
-  curDot.style.left = mx + 'px';
-  curDot.style.top  = my + 'px';
-  curRing.style.left = rx + 'px';
-  curRing.style.top  = ry + 'px';
-  requestAnimationFrame(cursorLoop);
-})();
-document.querySelectorAll('a,button,[onclick]').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('hovered'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('hovered'));
-});
+
 
 window.addEventListener('scroll', () => {
   const d = document.documentElement;
