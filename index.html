@@ -49,7 +49,8 @@ button{border:none;background:none;font-family:inherit;cursor:none;}
 ::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px;}
 
 /* ─── CURSOR ─────────────────────────────────────────────── */
-#cur{position:fixed;pointer-events:none;z-index:9999;width:10px;height:10px;background:var(--orange);border-radius:50%;}
+#cur{position:fixed;pointer-events:none;z-index:9999;mix-blend-mode:difference;}
+#cur-dot{width:8px;height:8px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);}
 #cur-ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(110,168,207,.7);border-radius:50%;pointer-events:none;z-index:9998;transition:width .2s,height .2s,border-color .2s;}
 
 body.hovered #cur-ring{width:56px;height:56px;border-color:var(--orange);}
@@ -511,7 +512,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--orange-text);outlin
 <div id="toast">✓ Email copié !</div>
 
 <!-- Cursor -->
-<div id="cur"></div>
+<div id="cur"><div id="cur-dot"></div></div>
 <div id="cur-ring"></div>
 
 <!-- Lightbox -->
@@ -1521,14 +1522,14 @@ setInterval(() => {
 const curDot = document.getElementById('cur');
 const curRing = document.getElementById('cur-ring');
 let mx=0, my=0, rx=0, ry=0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
 (function animCursor() {
   rx += (mx - rx) * .12;
   ry += (my - ry) * .12;
-  curDot.style.left = (mx - 5) + 'px';
-  curDot.style.top  = (my - 5) + 'px';
-  curRing.style.left = (rx - 20) + 'px';
-  curRing.style.top  = (ry - 20) + 'px';
+  curDot.style.left = mx+'px';
+  curDot.style.top = my+'px';
+  curRing.style.left = rx+'px';
+  curRing.style.top = ry+'px';
   requestAnimationFrame(animCursor);
 })();
 document.querySelectorAll('a,button,[onclick]').forEach(el => {
